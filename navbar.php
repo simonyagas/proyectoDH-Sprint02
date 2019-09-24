@@ -1,7 +1,7 @@
 <!-- Menu de navegacion -->
      
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-         <a href="index.html" class="navbar-brand">
+         <a href="index.php" class="navbar-brand">
              <img src="./img/logo.png" height="28" alt="CoolBrand">
          </a>
          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
