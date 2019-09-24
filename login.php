@@ -13,7 +13,7 @@
         //dd($usuario['password']);
         //Ahora veo que trae esta variable  y noto que trae el dato correctamente
         //dd($_POST['password']);
-        //Aquí estaba el error a la función password_verify, se le debe psar primero el dato no hasheado y luego el hasheado, ese fue mi error, lo habia pasado al contrario 
+        //Aquí estaba el error a la función password_verify, se le debe psar primero el dato no hasheado y luego el hasheado, ese fue mi error, lo habia pasado al contrario
         if(password_verify($_POST['password'],$usuario['password'])===false){
           $errores['password']="Datos inválidos...";
         }else{
@@ -57,10 +57,10 @@
 </head>
 <body>
      <!-- Menu de navegacion -->
-     <?php 
+     <?php
 		require_once('navbar.php');
 	    ?>
-    <!-- Menu de navegacion -->	
+    <!-- Menu de navegacion -->
 <div class="container">
   <div class="row">
     <div class="col-lg-10 col-xl-9 mx-auto">
@@ -77,27 +77,31 @@
                     <li><?=$value;?></li>
                 <?php endforeach;?>
               </ul>
-            <?php endif;?> 
+            <?php endif;?>
 
-            <form id="formulario"  class="form" name="formLogin"     novalidate action=""  method="POST" enctype="multipart/form-data" >
+            <form id="formulario"  class="form" name="formLogin"     novalidate action="login.php"  method="POST" enctype="multipart/form-data" >
           <div class="form-group">
 
                 <label for="email">Correo electrónico</label>
                 <input required name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese su correo" value= "<?=isset($errores['email'])? "":old('email') ;?>"
               </div>
             <hr>
-            
+
 
             <div class="form-label-group">
-                
+
                 <input required name="password" type="password" value= "" class="form-control" id="password" placeholder="Contraseña">
                 <label for="password">Contraseña</label>
                 <small class="form-text text-muted">Al menos 6 caracteres, debe contenter sólo números</small>
-              </div> 
+              </div>
+              <div class="form-group">
+                <input  class="text-left" name="recordarme" type="checkbox" value= "recordarme" class="form-control " id="recordarme" >
+                <label for="recordarme">Recordarme</label>
+              </div>
 
 
 
-            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" >Login</button>
             <hr class="my-4">
             <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Login with Google</button>
             <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Login with Facebook</button>
@@ -108,7 +112,7 @@
   </div>
 </div>
 <!-- Footer -->
-<?php 
+<?php
  require_once('footer.php');
 ?>
 <!-- Footer -->

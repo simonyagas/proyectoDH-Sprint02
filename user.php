@@ -1,5 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+  require_once('controladores/funciones.php');
+  require_once('helpers.php');
+  //Esto lo incorporé, ya que por medio de esto logro hacer que si un usuario no está logueado en mi sistema y quiere entrar colocando la URL en el browser yo no se lo permito, hago que necesariamente se debe loguear
+  if(!isset($_SESSION["email"])) {
+    header("location:login.php");
+    exit;
+}
+?>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +33,7 @@
 </head>
 <body>
 <!-- Menu de navegacion -->
-<?php 
+<?php
  require_once('navbar.php');
 ?>
 <!-- Menu de navegacion -->
@@ -122,7 +130,7 @@
 
 
 <!-- Footer -->
-<?php 
+<?php
  require_once('footer.php');
 ?>
 <!-- Footer -->

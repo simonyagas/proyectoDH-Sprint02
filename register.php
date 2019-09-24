@@ -3,7 +3,7 @@
   require_once("controladores/funciones.php");
   require_once("helpers.php");
   if($_POST){
-    
+
     $errores = validar($_POST,$_FILES);
    if(count($errores)==0){
      $avatar = armarAvatar($_FILES);
@@ -41,7 +41,7 @@
      <body>
 
 <!-- Menu de navegacion -->
-<?php 
+<?php
  require_once('navbar.php');
 ?>
 <!-- Menu de navegacion -->
@@ -61,19 +61,19 @@
                     <li><?=$value;?></li>
                 <?php endforeach;?>
               </ul>
-            <?php endif;?> 
+            <?php endif;?>
 
             <form id="formulario"  class="form-signin" name="formRegistro"     novalidate action=""  method="POST" enctype="multipart/form-data" >
-            
+
             <div class="form-label-group">
-              
+
             <input required name="userName" type="text" id="inputUserame" value= "<?=isset($errores['username'])? "":old('userName') ;?>" class="form-control" id="userName" placeholder="Nombre de usuario"required autofocus>
 
             <label for="userName">Nombre de usuario</label>
             <div>
                 <!--Aquí les comparto este otro código donde pueden mostrar el error en el mismo lugar donde se produjo, usted decide como desea mostrar los errores-->
                 <?php if(isset($errores['userName'])):?>
-                  <h6 class="text-danger"><?= $errores['userName'];?></h6>  
+                  <h6 class="text-danger"><?= $errores['userName'];?></h6>
                 <?php endif;?>
               </div>
 
@@ -92,21 +92,20 @@
               <label for="password">Password</label>
             </div>
 
-
             <div class="form-label-group">
-            <input required name="passwordRepeat" type="password" value= ""class="form-control" id="passwordRepeat" placeholder="Password">
-              <label for="inputConfirmPassword">Confirm password</label>
-              <small class="form-text text-muted">Al menos 6 caracteres, debe contenter sólo números</small>
+                <label for="passwordRepeat">Repetir password</label>
+                <input required name="passwordRepeat" type="password" value= ""class="form-control" id="passwordRepeat" placeholder="Repetir contraseña">
+                <small class="form-text text-muted">Al menos 6 caracteres, debe contenter sólo números</small>
             </div>
 
               <div class="form-label-group">
-                <label for="avatar">Avatar</label>
+                <label for="avatar">Avatar</label> <br> <br>
                 <input required name="avatar" type="file" value= "" class="form-control" id="avatar" >
-              </div>   
+              </div>
 
 
             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-            <a class="d-block text-center mt-2 small" href="login.php">Sign In</a>
+            <a class="d-block text-center mt-2 small" href="login.php">Ya tengo cuenta</a>
             <hr class="my-4">
             <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign up with Google</button>
             <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
@@ -117,7 +116,7 @@
   </div>
 </div>
 <!-- Footer -->
-<?php 
+<?php
  require_once('footer.php');
 ?>
 <!-- Footer -->

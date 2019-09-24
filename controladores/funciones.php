@@ -15,7 +15,7 @@ function validar($datos,$imagen){
     }
     $email = trim($datos['email']);
     if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        $errores['email']="Chekea que sea un email";
+        $errores['email']="Email invalido";
     }
     $password = trim($datos['password']);
     if(empty($password)){
@@ -34,14 +34,14 @@ function validar($datos,$imagen){
         $ext = pathinfo($nombre,PATHINFO_EXTENSION);
         if($imagen['avatar']['error']!=0){
             $errores['avatar']="Subi una foto de perfil, dale que sos hermos@";
-    
+
         }elseif ($ext != "jpg" && $ext != "png") {
             $errores['avatar']="Solo imagenes, creo que subiste otra cosa";
-        }        
+        }
     }
 
 
-    return $errores;   
+    return $errores;
 }
 //Esta función nos ayuda a preparar el array asociativo de mi registro
 function armarRegistro($datos,$avatar){
