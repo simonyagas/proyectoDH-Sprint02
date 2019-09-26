@@ -19,7 +19,7 @@
         }else{
           seteoUsuario($usuario,$_POST);
           if(validarUsuario()){
-            header('location:perfil.php');
+            header('location:user.php');
             exit;
           }else{
             header('location:login.php');

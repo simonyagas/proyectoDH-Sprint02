@@ -1,5 +1,7 @@
-
-
+<?php
+require_once('controladores/funciones.php');
+require_once('helpers.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +29,10 @@
 </head>
 <body>
      <!-- Menu de navegacion -->
-     <?php 
+     <?php
 		require_once('navbar.php');
 	    ?>
-    <!-- Menu de navegacion -->		
+    <!-- Menu de navegacion -->
 
         <section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
                 <div class="container">
@@ -99,7 +101,7 @@
                 </div>
               </section>
 <!-- Footer -->
-<?php 
+<?php
  require_once('footer.php');
 ?>
 <!-- Footer -->

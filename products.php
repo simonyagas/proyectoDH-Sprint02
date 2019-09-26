@@ -1,4 +1,7 @@
-
+<?php
+require_once('controladores/funciones.php');
+require_once('helpers.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +30,10 @@
 </head>
 <body>
      <!-- Menu de navegacion -->
-     <?php 
+     <?php
 		require_once('navbar.php');
 	    ?>
-    <!-- Menu de navegacion -->	
+    <!-- Menu de navegacion -->
 <br><br><br>
   <div class="container">
 
@@ -221,7 +224,7 @@
 
 <br><br><br>
 <!-- Footer -->
-<?php 
+<?php
  require_once('footer.php');
 ?>
 <!-- Footer -->

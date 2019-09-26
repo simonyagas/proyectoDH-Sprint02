@@ -1,3 +1,8 @@
+<?php
+require_once('controladores/funciones.php');
+require_once('helpers.php');
+?>
+
      <!DOCTYPE html>
      <html lang="es">
      <head>
@@ -25,10 +30,10 @@
     </head>
      <body>
      <!-- Menu de navegacion -->
-     <?php 
+     <?php
 		require_once('navbar.php');
 	    ?>
-    <!-- Menu de navegacion -->	
+    <!-- Menu de navegacion -->
 
      <!-- Carrusel para pc -->
      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -56,13 +61,13 @@
        <img class="chiquita" src="./img/carousel1Mobile.webp" alt="">
 
      </div>
-     
+
 <!-- Footer -->
-<?php 
+<?php
  require_once('footer.php');
 ?>
 <!-- Footer -->
-     
-     
+
+
           </body>
           </html>

@@ -42,7 +42,8 @@
                   <div class="row">
                       <div class="col-md-4">
                           <div class="profile-img">
-                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+
+                              <img src= "<?=$_SESSION['avatar']?>" alt="">
                               <div class="file btn btn-lg btn-primary">
                                   Cambiar foto
                                   <input type="file" name="file"/>
@@ -52,10 +53,11 @@
                       <div class="col-md-6">
                           <div class="profile-head">
                                       <h5>
-                                        Micaela
+                                        <!-- NOMBRE USUARIO -->
+                                        <?=$_SESSION['nombre']?>
                                       </h5>
                                       <h6>
-                                          Digital House
+                                          Usuario Cuerdas BA
                                       </h6>
 
                               <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -85,10 +87,10 @@
                               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                           <div class="row">
                                               <div class="col-md-6">
-                                                  <label>Userario</label>
+                                                  <label>Usuario</label>
                                               </div>
                                               <div class="col-md-6">
-                                                  <p>Mica</p>
+                                                  <p><?=$_SESSION['nombre']?></p>
                                               </div>
                                           </div>
                                           <div class="row">
@@ -104,7 +106,7 @@
                                                   <label>Email</label>
                                               </div>
                                               <div class="col-md-6">
-                                                  <p>kshitighelani@gmail.com</p>
+                                                  <p><?=$_SESSION['email']?></p>
                                               </div>
                                           </div>
                                           <div class="row">
