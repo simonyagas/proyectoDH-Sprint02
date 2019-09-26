@@ -17,7 +17,7 @@
                  <a href="user.php" class="nav-item nav-link">Perfil</a>
                  <a href="#footer" class="nav-item nav-link">Contacto</a>
                  <a href="sessiondestroy.php" class="nav-item nav-link">Cerrar sesion</a>
-
+                 <a href="user.php" class="nav-item nav-link text-danger font-weight-bolder">Hola <?=$_SESSION['nombre']?></a>
                 <?php else: ?>
                   <a href="index.php" class="nav-item nav-link active">Home</a>
                   <a href="products.php" class="nav-item nav-link">Productos</a>

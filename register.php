@@ -67,9 +67,7 @@
 
             <div class="form-label-group">
 
-            <input required name="userName" type="text" id="inputUserame" value= "<?=isset($errores['username'])? "":old('userName') ;?>" class="form-control" id="userName" placeholder="Nombre de usuario"required autofocus>
-
-            <label for="userName">Nombre de usuario</label>
+            <input name="userName" type="text" id="inputUserame" value= "<?=isset($errores['username'])? "":old('userName') ;?>" class="form-control" id="userName" placeholder="Nombre de usuario" required autofocus >
             <div>
                 <!--Aquí les comparto este otro código donde pueden mostrar el error en el mismo lugar donde se produjo, usted decide como desea mostrar los errores-->
                 <?php if(isset($errores['userName'])):?>
@@ -94,7 +92,7 @@
 
             <div class="form-label-group">
                 <label for="passwordRepeat">Repetir password</label>
-                <input required name="passwordRepeat" type="password" value= ""class="form-control" id="passwordRepeat" placeholder="Repetir contraseña">
+                <input required name="passwordRepeat" type="password" value= ""class="form-control" id="passwordRepeat" placeholder="">
                 <small class="form-text text-muted">Al menos 6 caracteres, debe contenter sólo números</small>
             </div>
 
