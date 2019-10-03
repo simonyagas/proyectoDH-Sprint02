@@ -1,3 +1,70 @@
+$productos = [
+  <?php
+          0=>["acti"=>"active",
+              "imagen"=>"producto1.jpg",
+              "titulo"=>"Modelo Niza",
+              "descp"=>"Some small description goes here",
+              "rating"=>"132, 154",
+              "pricenew"=>"$1280",
+              "priceold"=>"$1980"],
+          1=>["acti"=>"active",
+              "imagen"=>"producto2.jpg",
+              "titulo"=>"Modelo Punta del Este",
+              "descp"=>"Some small description goes here",
+              "rating"=>"144, 167",
+              "pricenew"=>"$580",
+              "priceold"=>"$1180"],
+          2=>["acti"=>"active",
+              "imagen"=>"producto3.jpg",
+              "titulo"=>"Modelo Bali",
+              "descp"=>"Some small description goes here",
+              "rating"=>"80, 124",
+              "pricenew"=>"$720",
+              "priceold"=>"$1380"],
+          3=>["acti"=>"active",
+              "imagen"=>"producto4o.jpg",
+              "titulo"=>"Modelo Texas",
+              "descp"=>"Some small description goes here",
+              "rating"=>"99, 114",
+              "pricenew"=>"$420",
+              "priceold"=>"$980"],
+          4=>["acti"=>"active",
+              "imagen"=>"producto5.jpg",
+              "titulo"=>"Modelo New York",
+              "descp"=>"Some small description goes here",
+              "rating"=>"234, 344",
+              "pricenew"=>"$1280",
+              "priceold"=>"$1980"],
+          5=>["acti"=>"active",
+              "imagen"=>"producto6.jpg",
+              "titulo"=>"Modelo Madrid",
+              "descp"=>"Some small description goes here",
+              "rating"=>"67, 98",
+              "pricenew"=>"$1280",
+              "priceold"=>"$1980"],
+          6=>["acti"=>"active",
+              "imagen"=>"producto7.jpg",
+              "titulo"=>"Modelo Hombre 1",
+              "descp"=>"Some small description goes here",
+              "rating"=>"43, 67",
+              "pricenew"=>"$1280",
+              "priceold"=>"$1980"],
+          7=>["acti"=>"active",
+              "imagen"=>"producto8.jpg",
+              "titulo"=>"Modelo Hombre 2",
+              "descp"=>"Some small description goes here",
+              "rating"=>"56, 97",
+              "pricenew"=>"$1280",
+              "priceold"=>"$1980"],
+          8=>["acti"=>"active",
+              "imagen"=>"producto9.jpg",
+              "titulo"=>"Modelo Hombre 3",
+              "descp"=>"Some small description goes here",
+              "rating"=>"77, 89",
+              "pricenew"=>"$1280",
+              "priceold"=>"$1980"],
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,19 +90,19 @@
 </head>
   <body>
      <!-- Menu de navegacion -->
-     <?php 
+     <?php
 		require_once('navbar.php');
 	    ?>
-    <!-- Menu de navegacion -->	
+    <!-- Menu de navegacion -->
 
     <div class="container">
-        <a class="btn btn-light" href="products.html" role="button">Volver</a>       
+        <a class="btn btn-light" href="products.html" role="button">Volver</a>
     </div>
-    
+
 	<div class="container">
-      
+
 		<div class="card">
-      
+
 			<div class="container-fliud">
 				<div class="wrapper row">
 					<div class="preview col-md-6">
@@ -92,7 +159,7 @@
 		</div>
 	</div>
 <!-- Footer -->
-<?php 
+<?php
  require_once('footer.php');
 ?>
 <!-- Footer -->

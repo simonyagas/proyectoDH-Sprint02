@@ -1,6 +1,7 @@
 <?php
 require_once('controladores/funciones.php');
 require_once('helpers.php');
+require_once('arrayproductos.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,177 +45,27 @@ require_once('helpers.php');
 
 
 <div class="row">
+  <?php foreach ($productos as $key => $value):?>
 <div class="col-md-4">
 	<figure class="card card-product">
-		<div class="img-wrap"><img src="img/producto1.jpg"></div>
+		<div class="img-wrap"><img src="img/<?=$value["imagen"];?>"/></div>
 		<figcaption class="info-wrap">
-				<h4 class="title"> <a href="producto1.html" class="nav-item nav-link">Modelo Niza</a></h4>
-				<p class="desc"></p>
+				<h4 class="title"> <a href="producto1.html" class="nav-item nav-link"><?=$value["titulo"];?></a></h4>
+				<p class="desc"><?=$value["descp"];?></p>
 				<div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
+					<div class="label-rating"><?=$value["rating"][0];?></div>
+					<div class="label-rating"><?=$value["rating"][1];?></div>
 				</div> <!-- rating-wrap.// -->
 		</figcaption>
 		<div class="bottom-wrap">
 			<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
 			<div class="price-wrap h5">
-				<span class="price-new">$1280</span> <del class="price-old">$1980</del>
+				<span class="price-new"><?=$value["pricenew"];?></span> <del class="price-old"><?=$value["priceold"];?></del>
 			</div> <!-- price-wrap.// -->
 		</div> <!-- bottom-wrap.// -->
 	</figure>
 </div> <!-- col // -->
-<div class="col-md-4">
-	<figure class="card card-product">
-		<div class="img-wrap"><img src="img/producto2.jpg"> </div>
-		<figcaption class="info-wrap">
-				<h4 class="title"><a href="producto2.html" class="nav-item nav-link">Modelo Punta del Este</a></h4>
-				<p class="desc"></p>
-				<div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
-				</div> <!-- rating-wrap.// -->
-		</figcaption>
-		<div class="bottom-wrap">
-				<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-				<div class="price-wrap h5">
-					<span class="price-new">$580</span> <del class="price-old">$1180</del>
-				</div> <!-- price-wrap.// -->
-		</div> <!-- bottom-wrap.// -->
-	</figure>
-</div> <!-- col // -->
-<div class="col-md-4">
-	<figure class="card card-product">
-		<div class="img-wrap"><img src="img/producto3o.jpg"></div>
-		<figcaption class="info-wrap">
-				<h4 class="title"><a href="producto3.html" class="nav-item nav-link">Modelo Bali</a></h4>
-				<p class="desc">Some small description goes here</p>
-				<div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
-				</div> <!-- rating-wrap.// -->
-		</figcaption>
-		<div class="bottom-wrap">
-				<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-				<div class="price-wrap h5">
-					<span class="price-new">$720</span> <del class="price-old">$1380</del>
-				</div> <!-- price-wrap.// -->
-		</div> <!-- bottom-wrap.// -->
-	</figure>
-</div> <!-- col // -->
-<div class="col-md-4">
-	<figure class="card card-product">
-		<div class="img-wrap"><img src="img/producto4o.jpg"></div>
-		<figcaption class="info-wrap">
-				<h4 class="title"><a href="producto4.html" class="nav-item nav-link">Modelo Texas</a></h4>
-				<p class="desc">Some small description goes here</p>
-				<div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
-				</div> <!-- rating-wrap.// -->
-		</figcaption>
-		<div class="bottom-wrap">
-			<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-			<div class="price-wrap h5">
-				<span class="price-new">$420</span> <del class="price-old">$1980</del>
-			</div> <!-- price-wrap.// -->
-		</div> <!-- bottom-wrap.// -->
-	</figure>
-</div> <!-- col // -->
-<div class="col-md-4">
-	<figure class="card card-product">
-		<div class="img-wrap"><img src="img/producto5.jpg"> </div>
-		<figcaption class="info-wrap">
-				<h4 class="title"><a href="producto5.html" class="nav-item nav-link">Modelo New York</a></h4>
-				<p class="desc"></p>
-				<div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
-				</div> <!-- rating-wrap.// -->
-		</figcaption>
-		<div class="bottom-wrap">
-				<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-				<div class="price-wrap h5">
-					<span class="price-new">$1280</span> <del class="price-old">$1980</del>
-				</div> <!-- price-wrap.// -->
-		</div> <!-- bottom-wrap.// -->
-	</figure>
-</div> <!-- col // -->
-<div class="col-md-4">
-	<figure class="card card-product">
-		<div class="img-wrap"><img src="img/producto6.jpg"></div>
-		<figcaption class="info-wrap">
-				<h4 class="title"><a href="producto6.html" class="nav-item nav-link">Modelo Madrid</a></h4>
-				<p class="desc"></p>
-				<div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
-				</div> <!-- rating-wrap.// -->
-		</figcaption>
-		<div class="bottom-wrap">
-				<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-				<div class="price-wrap h5">
-					<span class="price-new">$1280</span> <del class="price-old">$1980</del>
-				</div> <!-- price-wrap.// -->
-		</div> <!-- bottom-wrap.// -->
-	</figure>
-</div> <!-- col // -->
-<div class="col-md-4">
-	<figure class="card card-product">
-		<div class="img-wrap"><img src="img/producto7.jpg"></div>
-		<figcaption class="info-wrap">
-				<h4 class="title"><a href="producto7.html" class="nav-item nav-link">Modelo Hombre1</a></h4>
-				<p class="desc">Some small description goes here</p>
-				<div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
-				</div> <!-- rating-wrap.// -->
-		</figcaption>
-		<div class="bottom-wrap">
-			<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-			<div class="price-wrap h5">
-				<span class="price-new">$1280</span> <del class="price-old">$1980</del>
-			</div> <!-- price-wrap.// -->
-		</div> <!-- bottom-wrap.// -->
-	</figure>
-</div> <!-- col // -->
-<div class="col-md-4">
-	<figure class="card card-product">
-		<div class="img-wrap"><img src="img/producto8.jpg"> </div>
-		<figcaption class="info-wrap">
-				<h4 class="title"><a href="producto8.html" class="nav-item nav-link">Modelo Hombre 2</a></h4>
-				<p class="desc">Some small description goes here</p>
-				<div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
-				</div> <!-- rating-wrap.// -->
-		</figcaption>
-		<div class="bottom-wrap">
-				<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-				<div class="price-wrap h5">
-					<span class="price-new">$1280</span> <del class="price-old">$1980</del>
-				</div> <!-- price-wrap.// -->
-		</div> <!-- bottom-wrap.// -->
-	</figure>
-</div> <!-- col // -->
-<div class="col-md-4">
-	<figure class="card card-product">
-		<div class="img-wrap"><img src="img/producto9.jpeg"></div>
-		<figcaption class="info-wrap">
-				<h4 class="title"><a href="producto9.html" class="nav-item nav-link">Modelo Hombre 3</a></h4>
-				<p class="desc">Some small description goes here</p>
-				<div class="rating-wrap">
-					<div class="label-rating">132 reviews</div>
-					<div class="label-rating">154 orders </div>
-				</div> <!-- rating-wrap.// -->
-		</figcaption>
-		<div class="bottom-wrap">
-				<a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-				<div class="price-wrap h5">
-					<span class="price-new">$1280</span> <del class="price-old">$1980</del>
-				</div> <!-- price-wrap.// -->
-		</div> <!-- bottom-wrap.// -->
-	</figure>
-</div> <!-- col // -->
+<?php endforeach ?>
 </div> <!-- row.// -->
 
 
