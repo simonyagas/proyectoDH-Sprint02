@@ -58,7 +58,7 @@ require_once('helpers.php');
     </a>
   </div>
   <div id="fijaMobile">
-    <img class="chiquita" src="./img/carousel-tocada-2.jpg" alt="">
+    <img class="chiquita" src="./img/carousel1a.jpg" alt="">
 
   </div>
 
