@@ -14,9 +14,9 @@
         <!-- Content -->
         <h6 class="text-uppercase font-weight-bold">Cuerdas</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-          consectetur
-          adipisicing elit.</p>
+        <p>Somos una empresa con innovación, dedicación y perseverancia.
+          Utilizamos productos 100% nacionales de alta calidad para asegurar
+          la excelencia de nuestros productos.</p>
       </div>
       <!-- Grid column2 -->
       <!-- Grid column3 -->
