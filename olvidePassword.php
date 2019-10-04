@@ -53,7 +53,14 @@
       <!-- Codigo de css -->
       <link rel="stylesheet" href="css/login.css">
       <!-- Codigo de css -->
-  <title>Login</title>
+      <title>Recuperando contraseña</title>
+      <?php if(isset($errores)):?>
+              <ul class="alert alert-danger">
+                <?php foreach ($errores as $value) :?>
+                    <li><?=$value;?></li>
+                <?php endforeach;?>
+              </ul>
+            <?php endif;?> 
 </head>
 <body>
      <!-- Menu de navegacion -->
@@ -61,6 +68,8 @@
 		require_once('navbar.php');
 	    ?>
     <!-- Menu de navegacion -->
+
+
 <div class="container">
   <div class="row">
     <div class="col-lg-10 col-xl-9 mx-auto">
@@ -70,43 +79,36 @@
         </div>
         <div class="card-body">
 
-          <h5 class="card-title text-center">Login</h5>
+          <h5 class="card-title text-center">Cambiar pass</h5>
           <?php if(isset($errores)):?>
               <ul class="alert alert-danger">
                 <?php foreach ($errores as $value) :?>
                     <li><?=$value;?></li>
                 <?php endforeach;?>
               </ul>
-            <?php endif;?>
+            <?php endif;?> 
 
-            <form id="formulario"  class="form" name="formLogin"     novalidate action="login.php"  method="POST" enctype="multipart/form-data" >
-          <div class="form-group">
-
+          <form id="formularioOlvide"  class="formOlvide" name="formOlvide"     novalidate action=""  method="POST">
+                      
+            <div class="form-group">
                 <label for="email">Correo electrónico</label>
-                <input required name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese su correo" value= "<?=isset($errores['email'])? "":old('email') ;?>">
+                <input required name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Ingrese su correo" value= "<?=isset($errores['email'])? "":old('email') ;?>"
               </div>
-            <hr>
-
-
-            <div class="form-label-group">
-
+          
+              <div class="form-group">
+                <label for="password">Ingrese una nueva contraseña</label>
                 <input required name="password" type="password" value= "" class="form-control" id="password" placeholder="Contraseña">
-                <label for="password">Contraseña</label>
+              
                 <small class="form-text text-muted">Al menos 6 caracteres, debe contenter sólo números</small>
               </div>
+            
               <div class="form-group">
-                <input  class="text-left" name="recordarme" type="checkbox" value= "recordarme" class="form-control " id="recordarme" >
-                <label for="recordarme">Recordarme</label>
+                <label for="password">Confirmar contraseña</label>
+                <input required name="passwordRepeat" type="password" value= ""class="form-control" id="passwordRepeat" placeholder="Confirmar la contraseña">
               </div>
+           
+              <button type="submit" class="btn btn-primary">Cambiar contraseña</button>
 
-
-
-            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" >Login</button>
-            <a href="olvidePassword.php" class="btn btn-lg btn-secondary btn-block text-uppercase">Olvide mi contraseña, ayuda!</a>
-
-            <hr class="my-4">
-            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Login with Google</button>
-            <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Login with Facebook</button>
           </form>
         </div>
       </div>

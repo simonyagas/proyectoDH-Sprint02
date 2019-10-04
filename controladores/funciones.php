@@ -43,6 +43,44 @@ function validar($datos,$imagen){
 
     return $errores;
 }
+//Esta función se encarga de validad los datos queel usuario coloca en el formulario de Login
+function validarLogin($datos){
+    $errores=[];
+    $email = trim($datos['email']);
+    if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+        $errores['email']="Email inválido...";
+    }
+    $password = trim($datos['password']);
+    if(empty($password)){
+        $errores['password']="El password no puede ser blanco...";
+    }elseif (!is_numeric($password)) {
+        $errores['password']="El password debe ser numérico...";
+    }elseif (strlen($password)<6) {
+        $errores['password']="El password como mínimo debe tener 6 caracteres...";
+    }
+    return $errores;
+}
+function validarOlvidePassword($datos){
+    //Este representa mi array donde voy a ir almacenando los errores, que luego muestro en la vista al usuario.|
+    $errores = [];
+    $email = trim($datos['email']);
+    if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+        $errores['email']="Email inválido...";
+    }
+    $password = trim($datos['password']);
+    if(empty($password)){
+        $errores['password']="El password no puede ser blanco...";
+    }elseif (!is_numeric($password)) {
+        $errores['password']="El password debe ser numérico...";
+    }elseif (strlen($password)<6) {
+        $errores['password']="El password como mínimo debe tener 6 caracteres...";
+    }
+    $passwordRepeat = trim($datos['passwordRepeat']);
+    if($password != $passwordRepeat){
+        $errores['passwordRepeat']="Las contraseñas deben ser iguales";
+    }
+    return $errores;   
+}
 //Esta función nos ayuda a preparar el array asociativo de mi registro
 function armarRegistro($datos,$avatar){
     $usuario = [
@@ -76,23 +114,31 @@ function armarAvatar($imagen){
     $avatar = $avatar.".".$ext;
     return $avatar;
 }
-//Esta función se encarga de validad los datos queel usuario coloca en el formulario de Login
-function validarLogin($datos){
-    $errores=[];
-    $email = trim($datos['email']);
-    if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        $errores['email']="Email inválido...";
+function armarRegistroOlvide($datos){
+    $usuarios = abrirBaseDatos();
+
+    foreach ($usuarios as $key=>$usuario) {
+
+        if($datos["email"]==$usuario["email"]){
+            //Esta línea se las comente para que a futuro puedan probar si la clave nueva la van a grabar coorectamente, la idea es verla antes de hashearla.
+            //$usuario["password"]= $datos["password"];
+            $usuario["password"]= password_hash($datos["password"],PASSWORD_DEFAULT);
+            $usuarios[$key] = $usuario;
+        }
+        $usuarios[$key] = $usuario;
     }
-    $password = trim($datos['password']);
-    if(empty($password)){
-        $errores['password']="El password no puede ser blanco...";
-    }elseif (!is_numeric($password)) {
-        $errores['password']="El password debe ser numérico...";
-    }elseif (strlen($password)<6) {
-        $errores['password']="El password como mínimo debe tener 6 caracteres...";
+
+    //Esto se los coloque para que sepan que con esta función podemos borrar un archivo
+    unlink("usuarios.json");
+    foreach ($usuarios as  $usuario) {
+        $jsusuario = json_encode($usuario);
+        file_put_contents('usuarios.json',$jsusuario. PHP_EOL,FILE_APPEND);
     }
-    return $errores;
+
+//Esta función no retorna nada, ya que su  responsabilidad es guardar al usuario, pero con su nueva contraseña
 }
+
+
 
 //Función que nos permite buscar por email, a ver si el usuario existe o no en nuestra base de datos, que ahorita es un archivo json.
 function buscarPorEmail($email){
@@ -107,6 +153,8 @@ function buscarPorEmail($email){
     return null;
 }
 
+//Esta función no retorna nada, ya que su  responsabilidad es guardar al usuario, pero con su nueva contraseña
+}
 //Esta función abre nuestro archivo json y lo prepara para eliminar el último registro en blanco y además, fijese que además genero el array asociativo del mismo. Convierto de json a array asociativo para mas adelante con la funcion "bucarEmail" poder recorrerlo y verificar si el usuario existe o no en mi base de datos, dicha verificación la hago por el email del usuario, ya que es el dato único que tengo del usuario
 function abrirBaseDatos(){
     if(file_exists('usuarios.json')){
