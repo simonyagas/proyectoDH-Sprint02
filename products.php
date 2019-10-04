@@ -50,7 +50,7 @@ require_once('arrayproductos.php');
 	<figure class="card card-product">
 		<div class="img-wrap"><img src="img/<?=$value["imagen"];?>"/></div>
 		<figcaption class="info-wrap">
-				<h4 class="title"> <a href="producto1.html" class="nav-item nav-link"><?=$value["titulo"];?></a></h4>
+				<h4 class="title"> <a href="productos.php" class="nav-item nav-link"><?=$value["titulo"];?></a></h4>
 				<p class="desc"><?=$value["descp"];?></p>
 				<div class="rating-wrap">
 					<div class="label-rating"><?=$value["rating"][0];?></div>
