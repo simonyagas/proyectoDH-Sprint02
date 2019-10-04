@@ -154,7 +154,7 @@ function buscarPorEmail($email){
 }
 
 //Esta función no retorna nada, ya que su  responsabilidad es guardar al usuario, pero con su nueva contraseña
-}
+
 //Esta función abre nuestro archivo json y lo prepara para eliminar el último registro en blanco y además, fijese que además genero el array asociativo del mismo. Convierto de json a array asociativo para mas adelante con la funcion "bucarEmail" poder recorrerlo y verificar si el usuario existe o no en mi base de datos, dicha verificación la hago por el email del usuario, ya que es el dato único que tengo del usuario
 function abrirBaseDatos(){
     if(file_exists('usuarios.json')){
